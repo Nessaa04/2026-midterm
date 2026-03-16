@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
     {
         //During setup we call UpdateScore to make sure our score text looks correct
         UpdateScore();
+        UpdateHealth();
     }
 
     //Update is a lot like Start, but it automatically gets triggered once per frame
@@ -103,6 +104,7 @@ public class PlayerScript : MonoBehaviour
         {
             //Run your 'you lose' function!
             Health-- ;
+            UpdateHealth();
         }
 
         if (Health == 0)
@@ -128,6 +130,11 @@ public class PlayerScript : MonoBehaviour
         }
 
 
+    }
+
+    public void UpdateHealth()
+    {
+        HealthText.text = "Health: " + Health;
     }
 
     //This function updates the game's score text to show how many points you have
