@@ -28,7 +28,11 @@ public class PlayerScript : MonoBehaviour
     public CoinScript CoinPrefab;
 
     public poweruphealth_script poweruphealthPrefab;
-    
+
+    public PlayerScript P;
+
+
+
     //Start automatically gets triggered once when the objects turns on/the game starts
     void Start()
     {
@@ -134,13 +138,14 @@ public class PlayerScript : MonoBehaviour
         if (poweruphealth != null)
         {
             poweruphealth.GetBumped();
-            Health += 1;
+            P.Health += 1;
             if(Health > 3)
             {
               Health = 3;
             }
         }
     }
+
 
     public void UpdateHealth()
     {
