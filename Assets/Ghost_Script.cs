@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ghost_Script : MonoBehaviour
 { 
-    public float Speed = 5;
+    public float Speed = 2;
 
     public PlayerScript P;
 
@@ -20,17 +20,10 @@ public class Ghost_Script : MonoBehaviour
     void Update()
     {
         //trying to code it to follow Player
-        if (P.transform.position.x > transform.position.x);
-         {
-            Vector3 pos = transform.position;
-            pos.x = transform.position.x;
-            transform.position = pos;
-         }
-        if (P.transform.position.x < transform.position.x);
-         {
-            Vector3 pos = transform.position;
-            pos.x = transform.position.x;
-            transform.position = pos;
-         }
+        Vector3 pos = transform.position;
+        pos.x = target.position.x;
+        pos.y = target.position.y;
+        transform.position = pos;
+
     }
 }
