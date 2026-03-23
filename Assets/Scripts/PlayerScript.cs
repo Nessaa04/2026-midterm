@@ -137,8 +137,11 @@ public class PlayerScript : MonoBehaviour
         poweruphealth_script poweruphealth = other.gameObject.GetComponent<poweruphealth_script>();
         if (poweruphealth != null)
         {
-            poweruphealth.GetBumped();
-            P.Health += 1;
+            {   
+                poweruphealth.GetBumped();
+                P.Health += 1;
+            }
+
             if(Health > 3)
             {
               Health = 3;
@@ -156,12 +159,24 @@ public class PlayerScript : MonoBehaviour
     //Even if your 'score' variable goes up, if you don't update the text the player doesn't know
     public void UpdateScore()
     {
-        ScoreText.text = "Score: " + Score;
+        {
+             ScoreText.text = "Score: " + Score;
+        }
+
+        if (Score== 25)
+        {
+            Win();
+        }
     }
 
     //If this function is called, the player character dies. The game goes to a 'Game Over' screen.
     public void Die()
     {
         SceneManager.LoadScene("Game Over");
+    }
+
+    public void Win()
+    {
+        SceneManager.LoadScene("You Win!");
     }
 }
