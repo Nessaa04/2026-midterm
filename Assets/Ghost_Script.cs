@@ -26,6 +26,23 @@ public class Ghost_Script : MonoBehaviour
             pos.x += 2 * Time.deltaTime;
             transform.position = pos;
         }
-
+        if (P.transform.position.x < transform.position.x)
+        {
+            Vector3 pos = transform.position;
+            pos.x += 2 * -Time.deltaTime;
+            transform.position = pos;
+        }
+        if (P.transform.position.y > transform.position.y)
+        {
+            Vector3 pos = transform.position;
+            pos.y += 2 * Time.deltaTime;
+            transform.position = pos;
+        }
+        if (P.transform.position.y < transform.position.y)
+        {
+            Vector3 pos = transform.position;
+            pos.y += 2 * -Time.deltaTime;
+            transform.position = pos;
+        }
     }
 }
