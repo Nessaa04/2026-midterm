@@ -134,13 +134,13 @@ public class PlayerScript : MonoBehaviour
             //And then update the game's score text
             UpdateScore();
         }
+
         poweruphealth_script poweruphealth = other.gameObject.GetComponent<poweruphealth_script>();
         if (poweruphealth != null)
-        {
-            {   
-                poweruphealth.GetBumped();
-                P.Health += 1;
-            }
+        {  
+            poweruphealth.GetBumped();
+            Health += 1;
+            UpdateHealth();
 
             if(Health > 3)
             {
